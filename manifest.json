@@ -1,0 +1,16 @@
+{
+    "name": "tldr",
+    "description": "too long don't read",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": ["activeTab", "scripting"],
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": {
+            "128": "Icon.png"
+        }
+    },
+    "icons": {
+        "128": "Icon.png"
+    }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Snake Game</title>
+        <!-- <h1>scores</h1> -->
+        <style>
+        </style>
+        <p>
+            I am a computer
+        </p>
+        <script>
+            var port = chrome.runtime.connect();
+
+            window.addEventListener("message", (event) => {
+                // We only accept messages from ourselves
+                if (event.source != window) {
+                  return;
+                }
+
+                if (event.data.type && (event.data.type == "FROM_PAGE")) {
+                    console.log("Content script received: " + event.data.text);
+                    port.postMessage(event.data.text);
+                }
+                }, false);
+        </script>
+        </body>
+    </head>
