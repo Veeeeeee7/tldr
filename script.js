@@ -1,8 +1,10 @@
 const { Configuration, OpenAIApi } = require("openai");
+const { readFileSync } = require("fs");
+
+const apiKey = readFileSync("API_KEY.txt", "utf-8");
 
 const configuration = new Configuration({
-    // apiKey: process.env.OPENAI_API_KEY,
-    apiKey: "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",
+    apiKey: apiKey,
 });
 const openai = new OpenAIApi(configuration);
 
